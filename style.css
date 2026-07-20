@@ -99,9 +99,10 @@ p {
     transition: .3s;
 }
 
-.nav-list li:hover .tooltip {
+.nav-list li:hover .tooltip,
+a:hover .tooltip {
     visibility: visible;
-    opacity: .3s;
+    opacity: 1;
 }
 
 .container {
@@ -117,7 +118,7 @@ p {
     height: 100%;
     transform-style: preserve-3d;
     transform-origin: 50% 50% -50vw;
-    transform: rotateY(0deg);
+    transform: rotateY(-180deg);
 }
 
 .section {
@@ -129,7 +130,21 @@ p {
     backface-visibility: hidden;
 }
 
-.home {
+.section:nth-child(even) {
+    background: var(--second-bg-color);
+}
+
+.section.about {
+    transform: translateX(50vw) translateZ(-50vw) rotate(90deg);
+}
+
+.section.resume {
+    transform: translateZ(-100vw) rotateY(-180deg);
+    transform-origin: 50%;
+}
+
+.home,
+about {
     display: flex;
     align-items: center;
     gap: 5rem;
@@ -209,16 +224,104 @@ p {
 .img-box.home-img:hover {
     box-shadow: 0 0 8rem var(--main-color);
 }
+
 .img-box img {
     position: absolute;
-    top: 3rem;
+    top: 0rem;
     display: block;
     width: 85%;
     object-fit: cover;
 }
 
+.img-box.about-img {
+    background: transparent;
+    box-shadow: 0 0 2rem var(--main-color), inset 0 0 1rem var(--main-color);
+}
 
+.img-box.about-img img {
+    z-index: -1;
+}
 
+.title {
+    font-size: 4rem;
+    text-align: center;
+}
+
+.about-info .title {
+    text-align: left;
+}
+
+.about-info h3 {
+    font-size: 2.5rem;
+    color: var(--main-color);
+    margin-top: -1rem;
+}
+
+.about-info .btn {
+    padding: 1.2rem 4rem;
+}
+
+.resume {
+    padding-top: 2rem;
+    padding-bottom: 28rem;
+}
+
+.tab-box {
+    display: flex;
+    width: 100%;
+    height: 5rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.tab-list {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+    border-bottom: .3rem solid var(--tab-list-color);
+    color: var(--tab-list-color);
+    transition: .5s;
+}
+
+.tab-list.resume-list.active {
+    border-color: var(--main-color);
+    color: var(--main-color);
+}
+
+.resume-list:nth-child(2) {
+    justify-content: center;
+}
+
+.resume-list:nth-child(3) {
+    justify-content: flex-end;
+}
+
+.tab-list h3 {
+    font-size: 2.5rem;
+}
+
+.tab-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.tab-grid {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(.8);
+}
+
+.tab-grid.resume-box.active {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+    transition: .5s;
+}
 
 
 
