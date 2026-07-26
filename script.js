@@ -18,6 +18,17 @@ navs.forEach((nav, idx) => {
 
         document.querySelector('.section.active').classList.remove('active');
         sections[idx].classList.add('active');
+
+        const array = Array.from(sections);
+        const arrSecs = array.slice(1, -1);
+        arrSecs.forEach(arrSec => {
+            if (arrSec.classList.contains('active')) {
+                sections[4].classList.add('action-contact');
+            }
+        });
+        if (sections[0].classList.contains('active')) {
+            sections[4].classList.remove('action-contact');
+        }
     });
 });
 
