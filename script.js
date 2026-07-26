@@ -1,8 +1,25 @@
+const navs = document.querySelectorAll('.nav-list li');
+const cube = document.querySelector('.box');
+const sections = document.querySelectorAll('.section');
+
 const resumeLists = document.querySelectorAll('.resume-list');
 const resumeBoxs = document.querySelectorAll('.resume-box');
 
 const portfolioLists = document.querySelectorAll('.portfolio-list');
 const portfolioBoxs = document.querySelectorAll('.portfolio-box');
+
+
+navs.forEach((nav, idx) => {
+    nav.addEventListener('click', () => {
+        document.querySelector('.nav-list li.active').classList.remove('active');
+        nav.classList.add('active');
+
+        cube.style.transform = `rotateY(${idx * -90}deg)`;
+
+        document.querySelector('.section.active').classList.remove('active');
+        sections[idx].classList.add('active');
+    });
+});
 
 
 resumeLists.forEach((list, idx) => {
