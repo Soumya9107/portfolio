@@ -53,3 +53,8 @@ portfolioLists.forEach((list, idx) => {
         portfolioBoxs[idx].classList.add('active');
     });
 });
+
+
+setTimeout(() => {
+    sections[4].classList.remove('active');
+}, 1500);
