@@ -162,7 +162,10 @@ a:hover .tooltip,
 }
 
 .section.about {
-    transform: translateX(50vw) translateZ(-50vw) rotate(90deg);
+    transform: translateX(50vw) translateZ(-50vw) rotateY(90deg);
+    display: flex;
+    align-items: center;
+    gap: 5rem;
 }
 
 .section.resume {
@@ -269,7 +272,7 @@ a:hover .tooltip,
     transition: 1s;
 }
 
-.img-box.home-img:hover {
+.img-box.home-image:hover {
     box-shadow: 0 0 8rem var(--main-color);
 }
 
@@ -281,12 +284,12 @@ a:hover .tooltip,
     object-fit: cover;
 }
 
-.img-box.about-img {
+.img-box.about-image {
     background: transparent;
     box-shadow: 0 0 2rem var(--main-color), inset 0 0 1rem var(--main-color);
 }
 
-.img-box.about-img img {
+.img-box.about-image img {
     z-index: -1;
 }
 
@@ -527,7 +530,7 @@ a:hover .tooltip,
     margin-right: 1rem;
 }
 
-.portfolio-item .work-icon a:nth-child(1) {
+.portfolio-item .work-icon a:nth-child(1) i {
     transform: rotate(135deg);
 }
 
